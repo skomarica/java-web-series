@@ -1,0 +1,69 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+    
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    
+    // Database Pool
+    compile "org.apache.commons:commons-dbcp2:$dbcpVersion"
+
+    // Spring dependencies
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-web:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-context-support:$springVersion"
+    compile "org.springframework:spring-orm:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
+
+    // Hibernate ORM
+    compile "org.hibernate:hibernate-core:$hibernateVersion"
+    compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
+
+    // Utility libraries
+    compile "com.google.guava:guava:$guavaVersion"    
+    compile "commons-codec:commons-codec:$commonsCodecVersion"
+    compile "joda-time:joda-time:$jodaTimeVersion"
+    compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    
+    // PostgreSQL, H2 databases
+    compile "org.postgresql:postgresql:$postgresqlDatabaseVersion"
+    testCompile "com.h2database:h2:$h2DatabaseVersion"
+    
+    // jcl-over-slf4j used to bridge Spring's commons-logging to slf4j
+    compile "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+    compile "ch.qos.logback:logback-classic:$logbackVersion"
+      
+    // 'slf4j-api' already included as dependency of logback and jcl-over-slf4j
+    // compile "org.slf4j:slf4j-api:$slf4jVersion"
+
+    // Unit testing
+    testCompile "junit:junit:$junitVersion"
+    testCompile "org.mockito:mockito-all:$mockitoVersion"
+    
+}
+
+configurations {
+    all*.exclude group: 'commons-logging'
+}
+
+war.archiveName = 'blog.war'
+
+jettyRun.contextPath = 'blog'
+jettyRunWar.contextPath = 'blog'
+
+jettyRun.stopPort = 8090
+jettyRun.stopKey = 'stopKey'
+jettyRunWar.stopPort = 8090
+jettyRunWar.stopKey = 'stopKey'
+jettyStop.stopPort = 8090
+jettyStop.stopKey = 'stopKey'

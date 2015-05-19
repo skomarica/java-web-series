@@ -1,0 +1,7 @@
+Java formatter is based on "spring-code-conventions.xml" (Spring IDE, version 10) from http://docs.spring.io/spring/xml/spring-code-conventions.xml
+
+Modifications: 
+
+"org.eclipse.jdt.core.formatter.alignment_for_conditional_expression" - value changed from 80 to 120
+"org.eclipse.jdt.core.formatter.comment.line_length" - value changed from 80 to 120
+"org.eclipse.jdt.core.formatter.lineSplit" - value changed from 80 to 120

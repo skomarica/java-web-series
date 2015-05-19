@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rs.pstech.workshop.javaweb.blog.service.BlogServiceTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-05-19T14:33:46" hostname="D-003238" time="0.125">
+  <properties/>
+  <testcase name="testAddBlogComment" classname="rs.pstech.workshop.javaweb.blog.service.BlogServiceTest" time="0.105"/>
+  <testcase name="testRemoveBlogComment" classname="rs.pstech.workshop.javaweb.blog.service.BlogServiceTest" time="0.002"/>
+  <testcase name="testGetAllBlogs" classname="rs.pstech.workshop.javaweb.blog.service.BlogServiceTest" time="0.011"/>
+  <testcase name="testGetBlog" classname="rs.pstech.workshop.javaweb.blog.service.BlogServiceTest" time="0.004"/>
+  <testcase name="testCreateBlog" classname="rs.pstech.workshop.javaweb.blog.service.BlogServiceTest" time="0.002"/>
+  <testcase name="testDeleteBlog" classname="rs.pstech.workshop.javaweb.blog.service.BlogServiceTest" time="0.001"/>
+  <system-out><![CDATA[.16:33:46.950 [Test worker] DEBUG r.p.w.j.blog.service.BlogServiceImpl - Created new blog with ID '5' 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
