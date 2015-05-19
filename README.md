@@ -28,5 +28,5 @@
 
 ### Importing projects
 
-- `Import -> Gradle Project`: Select root folder `.../git/java/java-web-series` and run `Build Model`
+- `Import -> Gradle Project`: Select root folder `.../git/java/java-web-series/<project_name>` and run `Build Model`
 - Select projects and import with default options
