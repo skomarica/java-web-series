@@ -7,21 +7,22 @@
 
 <div ng-show="blogEntries.length > 0">
 
-	<h2>Blogs</h2>
-
 	<div ng-repeat="blogEntry in blogEntries">
 
-		<div class="pull-left">
-			<p><h3>{{blogEntry.title}}</h3></p>
-	        <div class="pull-right">
-	            <a href="" ng-click="deleteBlogEntry(blogEntry)"><img src="app/img/actions/delete-16.png" /></a>
+		<div class="container">
+			<div class="row">
+	    		<div class="col-md-6"><h3>{{blogEntry.title}}</h3></div>
+	    		<div class="col-md-6"><span class="pull-right"><a href="" ng-click="deleteBlogEntry(blogEntry)"><img src="app/img/actions/delete-16.png" /></a></span></div>
 	        </div>
-			<p>{{blogEntry.content}}</p>
-			<p><small>{{blogEntry.author}}, created on {{blogEntry.created}}</small></p>
-			<hr />
+	        <div class="row">
+	    		<div class="col-md-12">{{blogEntry.content}}</div>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-12"><span class="pull-right"><small>{{blogEntry.author}}, created on {{blogEntry.created}}</small></span></div>
+			</div>
 		</div>
+		<hr />
 	</div>
-
 </div>
 
 <div ng-hide="blogEntries.length > 0">No blogs.</div>

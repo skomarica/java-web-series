@@ -27,7 +27,7 @@ public class Blog implements Serializable {
 	@Column
 	private String title;
 
-	@Column(length = 1000)
+	@Column(length = 2000)
 	private String content;
 
 	@Column
