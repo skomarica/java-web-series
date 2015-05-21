@@ -4,23 +4,23 @@
 
 <form class="form-horizontal">
 	<div class="form-group">
-		<label for="title" class="control-label col-xs-2">Name</label>
+		<label for="title" class="control-label col-xs-2">Title</label>
 		<div class="col-xs-4">
-			<input type="text" ng-model="blogEntry.title" class="form-control" id="title" placeholder="Title">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="content" class="control-label col-xs-2">Content</label>
-		<div class="col-xs-4">
-			<input type="text" ng-model="blogEntry.content" class="form-control" id="content" placeholder="Content">
+			<input type="text" ng-model="blogEntry.title" class="form-control" id="title" placeholder="Title" />
 		</div>
 	</div>
     <div class="form-group">
         <label for="author" class="control-label col-xs-2">Author</label>
         <div class="col-xs-4">
-            <input type="text" ng-model="blogEntry.author" class="form-control" id="author" placeholder="Author">
+            <input type="text" ng-model="blogEntry.author" class="form-control" id="author" placeholder="Author" />
         </div>
     </div>
+	<div class="form-group">
+		<label for="content" class="control-label col-xs-2">Content</label>
+		<div class="col-xs-8">
+		    <textarea ng-model="blogEntry.content" class="form-control" id="content" placeholder="Content"></textarea>
+		</div>
+	</div>
     <div class="form-group">
         <div class="col-sm-4 col-sm-offset-2">
             <button type="submit" class="btn btn-primary" ng-click="saveBlog()">

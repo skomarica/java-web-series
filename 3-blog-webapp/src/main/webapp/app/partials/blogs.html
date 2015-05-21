@@ -1,29 +1,27 @@
 <div class="pull-right">
-    <a href="#!/blog/create" class="btn btn-default" title="Create Blog"><span class="glyphicon glyphicon-plus"></span></a>
+	<a href="#!/blog/create" class="btn btn-default" title="Create Blog"><span class="glyphicon glyphicon-plus"></span></a>
 </div>
 <div class="page-header">
 	<h3>Blogs</h3>
 </div>
 
 <div ng-show="blogEntries.length > 0">
-	<table class="table table-condensed">
-		<thead>
-			<tr>
-				<th class="col-md-6">Title</th>
-				<th class="col-md-3">Author</th>
-				<th class="col-md-2">Created</th>
-                <th class="col-md-1">Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="blogEntry in blogEntries">
-				<td>{{blogEntry.title}}</td>
-				<td>{{blogEntry.author}}</td>
-                <td>{{blogEntry.created}}</td>
-				<td><a href="" ng-click="deleteBlogEntry(blogEntry)"><img src="app/img/actions/delete-16.png" /></a></td>
-			</tr>
-		</tbody>
-	</table>
+
+	<h2>Blogs</h2>
+
+	<div ng-repeat="blogEntry in blogEntries">
+
+		<div class="pull-left">
+			<p><h3>{{blogEntry.title}}</h3></p>
+	        <div class="pull-right">
+	            <a href="" ng-click="deleteBlogEntry(blogEntry)"><img src="app/img/actions/delete-16.png" /></a>
+	        </div>
+			<p>{{blogEntry.content}}</p>
+			<p><small>{{blogEntry.author}}, created on {{blogEntry.created}}</small></p>
+			<hr />
+		</div>
+	</div>
+
 </div>
 
 <div ng-hide="blogEntries.length > 0">No blogs.</div>
