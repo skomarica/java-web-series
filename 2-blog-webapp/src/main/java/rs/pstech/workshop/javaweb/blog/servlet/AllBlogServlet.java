@@ -28,34 +28,35 @@ public class AllBlogServlet extends HttpServlet {
 	private void writeBlogs(ServletResponse response) throws IOException {
 		blogService = BlogServiceImpl.getInstance();
 		List<Blog> allBlogs = blogService.getAllBlogs();
-
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<style>");
-		out.println("tr.border_bottom td {");
-		out.println("border-bottom:1pt solid black;");
-		out.println("}");
-		out.println("</style>");
-		out.println("<title>All blogs</title>");
+		out.println("<title>Blog Application</title>");
 		out.println("</head>");
-		out.println("<body bgcolor=\"white\">");
-		out.println("<table  style=\"width:100%\" align=\"center\">");
-		out.println("<tr>");
-		out.println("<th align=\"left\">Blogs</th>");
-		out.println("</tr>");
-		out.println("<br><br>");
-		for (Blog blog : allBlogs) {
-			out.println("<tr>");
-			out.println("<td align=\"left\">" + blog.getTitle() + "</td>");
-			out.println("</tr>");
-			out.println("<tr class=\"border_bottom\">");
-			out.println("<td align=\"center\">" + blog.getContent() + "</td>");
-			out.println("</tr>");
-			out.println("<br>");
+		out.println("<body>");
+		out.println("	<div style=\"width: 60%; margin: 0 auto;\">");
+		out.println("		<div style=\"width: 100% border-style: solid; border-bottom: solid; border-width: thin; margin-top: 20px; margin-bottom: 10px;\">");
+		out.println("			<h3 style=\"font-weight: normal;\">");
+		out.println("				Blogs");
+		out.println("				<div align=\"right\">");
+		out.println("					<a href=\"/blog2/create\" title=\"Create Blog\">Create Blog</a>");
+		out.println("				</div>");
+		out.println("			</h3>");
+		out.println("		</div>");
+		if (allBlogs == null || allBlogs.isEmpty()) {
+			out.println("		<div>No blogs</div>");
 		}
-		out.println("</table");
+		else {
+			for (Blog blog : allBlogs) {
+				out.println("		<div>");
+				out.println("			<h3>" + blog.getTitle() + "</h3>");
+				out.println("		</div>");
+				out.println("		<div style=\"border-bottom: solid; border-width: thin;\">" + blog.getContent()
+						+ "</div>");
+			}
+		}
+		out.println("	</div>");
 		out.println("</body>");
 		out.println("</html>");
 	}
