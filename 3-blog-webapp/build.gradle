@@ -56,10 +56,10 @@ configurations {
     all*.exclude group: 'commons-logging'
 }
 
-war.archiveName = 'blog.war'
+war.archiveName = 'blog3.war'
 
-jettyRun.contextPath = 'blog'
-jettyRunWar.contextPath = 'blog'
+jettyRun.contextPath = 'blog3'
+jettyRunWar.contextPath = 'blog3'
 
 jettyRun.stopPort = 8090
 jettyRun.stopKey = 'stopKey'

@@ -12,24 +12,13 @@ repositories {
     
 dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-    
-    // Database Pool
-    compile "org.apache.commons:commons-dbcp2:$dbcpVersion"
 
     // jcl-over-slf4j used to bridge Spring's commons-logging to slf4j
     compile "org.slf4j:jcl-over-slf4j:$slf4jVersion"
     compile "ch.qos.logback:logback-classic:$logbackVersion"
-      
-    // 'slf4j-api' already included as dependency of logback and jcl-over-slf4j
-    // compile "org.slf4j:slf4j-api:$slf4jVersion"
 
     // PostgreSQL, H2 databases
-    compile "org.postgresql:postgresql:$postgresqlDatabaseVersion"
-    testCompile "com.h2database:h2:$h2DatabaseVersion"
-    
-    // Unit testing
-    testCompile "junit:junit:$junitVersion"
-    
+    compile "org.postgresql:postgresql:$postgresqlDatabaseVersion"    
 }
 
 configurations {

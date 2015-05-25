@@ -21,9 +21,9 @@ public class BlogServiceImpl implements BlogService {
 
 	Logger logger = LoggerFactory.getLogger(BlogServiceImpl.class);
 
-	private static final String SELECT_STATEMENT = "select blog_id,title,content from blog";
+	private static final String SELECT_STATEMENT = "SELECT id, title, content FROM blog";
 
-	private static final String INSERT_STATEMENT = "insert into blog (title,content) values (?,?)";
+	private static final String INSERT_STATEMENT = "INSERT INTO blog (title, content) VALUES (?, ?)";
 
 	private String propFileName = "blog/config.properties";
 
@@ -58,11 +58,12 @@ public class BlogServiceImpl implements BlogService {
 			ResultSet rs = prepareStatement.executeQuery();
 
 			while (rs.next()) {
-				long id = rs.getLong("blog_id");
+				long id = rs.getLong("id");
 				String title = rs.getString("title");
 				String content = rs.getString("content");
+
 				Blog blog = new Blog();
-				blog.setBlog_id(id);
+				blog.setId(id);
 				blog.setTitle(title);
 				blog.setContent(content);
 				blogs.add(blog);
@@ -100,7 +101,7 @@ public class BlogServiceImpl implements BlogService {
 			ResultSet rs = stmt.getGeneratedKeys();
 			rs.next();
 			long pk = rs.getLong(1);
-			blog.setBlog_id(pk);
+			blog.setId(pk);
 		}
 		catch (ClassNotFoundException | SQLException e) {
 			logger.error("Unexpected exception during insertion of blogs. " + e.getMessage());
@@ -126,23 +127,6 @@ public class BlogServiceImpl implements BlogService {
 		else {
 			logger.error("property file '" + propFileName + "' not found in the classpath");
 			throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
-		}
-	}
-
-	public static void main(String[] args) {
-		try {
-			BlogServiceImpl instance = BlogServiceImpl.getInstance();
-			Blog blog = new Blog();
-			blog.setContent("nekakav sadrzaj");
-			blog.setTitle("nekakav title");
-			instance.createBlog(blog);
-			List<Blog> allBlogs = instance.getAllBlogs();
-			for (Blog blog2 : allBlogs) {
-				System.out.println(blog2);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 

@@ -1,4 +1,4 @@
-package rs.pstech.workshop.javaweb.servlet;
+package rs.pstech.workshop.javaweb.blog.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -58,6 +58,9 @@ public class HelloServlet extends HttpServlet {
 		out.println("<body>");
 		out.println("	<div style=\"width: 60%; margin: 0 auto;\">");
 		out.println("			<h3 align=\"center\">Hello " + name + "</h3>");
+		out.println("	</div>");
+		out.println("	<div style=\"width: 60%; margin: 0 auto;\">");
+		out.println("			<h3 align=\"left\"><a href=\"\" align=\"center\">Index</a></h3>");
 		out.println("	</div>");
 		out.println("</body>");
 		out.println("</html>");

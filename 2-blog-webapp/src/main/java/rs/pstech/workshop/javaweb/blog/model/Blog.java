@@ -6,7 +6,7 @@ public class Blog implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Long blog_id;
+	private Long id;
 
 	private String title;
 
@@ -16,12 +16,12 @@ public class Blog implements Serializable {
 		super();
 	}
 
-	public Long getBlog_id() {
-		return blog_id;
+	public Long getId() {
+		return id;
 	}
 
-	public void setBlog_id(Long blog_id) {
-		this.blog_id = blog_id;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -42,7 +42,7 @@ public class Blog implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Blog [blog_id=" + blog_id + ", title=" + title + ", content=" + content + "]";
+		return "Blog [id=" + id + ", title=" + title + ", content=" + content + "]";
 	}
 
 }

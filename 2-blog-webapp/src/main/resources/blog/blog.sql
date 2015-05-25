@@ -4,7 +4,7 @@
 
 CREATE TABLE blog
 (
-  blog_id serial  NOT NULL, 
+  id serial  NOT NULL, 
   title character varying(255),
   "content" character varying(2000)
 )

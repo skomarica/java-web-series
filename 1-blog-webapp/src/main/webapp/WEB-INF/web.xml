@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
 
-	<!-- <Servlets -->
+	<!-- Servlets -->
 
     <servlet>
         <servlet-name>helloServlet</servlet-name>
-        <servlet-class>rs.pstech.workshop.javaweb.servlet.HelloServlet</servlet-class>
+        <servlet-class>rs.pstech.workshop.javaweb.blog.servlet.HelloServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>helloServlet</servlet-name>
